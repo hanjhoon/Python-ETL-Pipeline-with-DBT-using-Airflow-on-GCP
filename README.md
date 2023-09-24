@@ -95,7 +95,7 @@ DAG (Directed Acyclic Graph)는 핵심 개념이자 기본적인 구성 요소�
     ```
 
 
-     <p> </p> It's always good to testa task after creating it and so we can do that by running the following command:</p>
+     작업을 만든 후에는 항상 해당 작업을 테스트하는 것이 좋습니다. 이를 위해 다음 명령을 실행할 수 있습니다.
 
 
     ```
@@ -195,7 +195,8 @@ Airflow와 함께 dbt를 통합하기 위해 Cosmos를 사용하며, Cosmos를 �
   RUN python -m venv dbt_venv && source dbt_venv/bin/activate && \
     pip install --no-cache-dir dbt-bigquery==1.5.3 && deactivate
   ```
-  All the profile.yml, dbt_project.yml, sources.yml and packages.yml files are uploaded in files section. All the .sql files are also uploaded. After running the dbt models using dbt cli, we can see four tables inside bigquery:
+
+profile.yml, dbt_project.yml, sources.yml 및 packages.yml 파일은 파일 섹션에 업로드되었습니다. 모든 .sql 파일도 업로드되었습니다. dbt CLI를 사용하여 dbt 모델을 실행한 후에는 Google BigQuery 내에서 네 개의 테이블을 볼 수 있습니다.
 
   <p align="center">
   <img width = "700" height="230" src="https://github.com/chayansraj/Python-ETL-Pipeline-with-DBT-using-Airflow-on-GCP/assets/22219089/2cdeb95e-cb9c-4cab-bfd4-5f44ee3341c8">
@@ -219,7 +220,7 @@ Airflow와 함께 dbt를 통합하기 위해 Cosmos를 사용하며, Cosmos를 �
 
   ![image](https://github.com/hanjhoon/Python-ETL-Pipeline-with-DBT-using-Airflow-on-GCP/assets/121271030/8d1d0625-4b13-4f98-8f74-1877f18faff2)
 
-  Similarly, we can implement the same for reporting models using sql and dbt. 
+  SQL과 dbt를 사용하여 보고 모델에 대해서도 동일한 작업을 구현할 수 있습니다.
 
 * **Step 5** - 단계 3을 반복하여 데이터를 사실(fact) 및 차원(dimension) 테이블로 변환한 후 데이터 품질 검사를 실행합니다. 변환 작업용 품질 검사 파일은 파일 섹션에 제공됩니다. DAG에 변환된 테이블을 확인할 추가 작업을 만듭니다.
 
@@ -267,6 +268,3 @@ chain(
     restart: always
   ```
 
-  
-We restart the airflow instance and we can start accessing metabase from localhost:3000. 
-Using the tables above and performing data analytics, we can finally create a dashboard.
